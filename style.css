@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+main {
+  padding: 20px;
+}
+#form-registrasi .row {
+  margin: 5px 0;
+}
+#form-registrasi label {
+  display: inline-block;
+  width: 130px;
+}
+input[type="text"],
+input[type="password"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #796;
+}
+button,
+.button-container a {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: small;
+  cursor: pointer;
+}
+button:hover,
+button:focus,
+.button-container a:focus,
+.button-container a:hover {
+  background-color: #444;
+}
+nav {
+  padding: 0 20px;
+  background-color: #555;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 10px 20px 10px 0px;
+  color: #aaa;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #fff;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #888;
+  text-align: left;
+}
+td:last-child {
+  text-align: right;
+}
+th {
+  background-color: #ddd;
+}
+h2 {
+  text-decoration: underline;
+}
+.label-detail {
+  display: inline-block;
+  width: 150px;
+}
+.isi-detail {
+  font-weight: bold;
+}
