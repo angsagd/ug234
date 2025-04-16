@@ -18,7 +18,6 @@ if(!$mysqli = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME)) {
 }
 
 function dbquery($sql) {
-
   global $mysqli;
   // eksekusi query
   if(!$result = mysqli_query($mysqli, $sql)) {
@@ -35,4 +34,14 @@ function dbquery($sql) {
 
   // kembalikan nilai hasil query
   return $result;
+}
+
+function show_menu() {
+  $menu ='<nav><ul>';
+  // loop menu
+  foreach(MENU as $item) 
+    $menu .= '<li><a href="' . $item['url'] . '">' . $item['label'] . '</a></li>';
+  
+  $menu .= '</ul></nav>';
+  return $menu;
 }

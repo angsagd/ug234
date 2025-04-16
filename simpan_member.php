@@ -21,3 +21,4 @@ if(isset($_POST)) {
 
 // redirect ke halaman daftar anggota
 header('Location: daftar_member.php');
+exit();

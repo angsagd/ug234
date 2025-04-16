@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+<?php
+require_once 'functions.php';
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kelas UG234</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <head>
+  <header>
     <h1>Kelas UG234</h1>
-  </head>
+  </header>
+  <?= show_menu() ?>
   <main>
     <section>
       <h2>Latihan</h2>

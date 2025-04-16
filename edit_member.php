@@ -27,12 +27,7 @@ if(!$row = mysqli_fetch_assoc($result)) {
   <header>
     <h1>Edit Data Anggota</h1>
   </header>
-  <nav>
-    <ul>
-      <li><a href="daftar_member.php">Daftar Anggota</a></li>
-      <li><a href="registrasi.php">Registrasi Anggota</a></li>
-    </ul>
-  </nav>
+  <?= show_menu() ?>
   <main>
     <form action="update_member.php" method="post" id="form-registrasi">
       <fieldset>

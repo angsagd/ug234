@@ -12,12 +12,17 @@ header {
 main {
   padding: 20px;
 }
-#form-registrasi .row {
+#form-registrasi .row,
+#form-login .row {
   margin: 5px 0;
 }
-#form-registrasi label {
+#form-registrasi label,
+#form-login label {
   display: inline-block;
   width: 130px;
+}
+#form-login button[type="submit"] {
+  margin-left: 135px;
 }
 input[type="text"],
 input[type="password"] {

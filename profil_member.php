@@ -27,12 +27,7 @@ if(!$row = mysqli_fetch_assoc($result)) {
   <header>
     <h1>Profil Anggota</h1>
   </header>
-  <nav>
-    <ul>
-      <li><a href="daftar_member.php">Daftar Anggota</a></li>
-      <li><a href="registrasi.php">Registrasi Anggota</a></li>
-    </ul>
-  </nav>
+  <?= show_menu() ?>
   <main>
     <h2><?= $row['fullname'] ?></h2>
     <h3>&lt;<?= $row['username'] ?>&gt;</h3>

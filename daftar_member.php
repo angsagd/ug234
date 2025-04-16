@@ -15,12 +15,7 @@ $result = dbquery("SELECT * FROM users");
   <header>
     <h1>Daftar Anggota</h1>
   </header>
-  <nav>
-    <ul>
-      <li><a href="daftar_member.php">Daftar Anggota</a></li>
-      <li><a href="registrasi.php">Registrasi Anggota</a></li>
-    </ul>
-  </nav>
+  <?= show_menu() ?>
   <main>
     <table>
       <thead>
