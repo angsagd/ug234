@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 const DBHOST = 'localhost';
 const DBUSER = 'webuser';

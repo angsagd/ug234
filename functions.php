@@ -45,3 +45,10 @@ function show_menu() {
   $menu .= '</ul></nav>';
   return $menu;
 }
+
+function cek_session() {
+  if(!isset($_SESSION['user'])) {
+    header('Location: login.php');
+    exit();
+  }
+}
