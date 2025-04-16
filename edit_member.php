@@ -1,18 +1,14 @@
 <?php
+require_once 'functions.php';
+
 if(!isset($_GET['id'])) {
   header('Location: daftar_member.php');
   exit();
 }
 $id = $_GET['id'];
-// koneksi ke database
-$mysqli = mysqli_connect('localhost', 'webuser', 'webuser', 'ug234');
-// buat query
-$sql = "SELECT * FROM users WHERE id = $id";
-// eksekusi query
-if(!$result = mysqli_query($mysqli, $sql)) {
-  // jika gagal, tampilkan pesan error
-  exit('Gagal Query: ' . mysqli_error($mysqli));
-}
+
+$result = dbquery("SELECT * FROM users WHERE id = $id");
+
 // ambil data anggota
 if(!$row = mysqli_fetch_assoc($result)) {
   // jika tidak ada data anggota, redirect ke daftar anggota

@@ -1,13 +1,8 @@
 <?php
-// koneksi ke database
-$mysqli = mysqli_connect('localhost', 'webuser', 'webuser', 'ug234');
-// buat query
-$sql = "SELECT * FROM users";
-// eksekusi query
-if(!$result = mysqli_query($mysqli, $sql)) {
-  // jika gagal, tampilkan pesan error
-  exit('Gagal Query: ' . mysqli_error($mysqli));
-}
+require_once 'functions.php';
+
+$result = dbquery("SELECT * FROM users");
+
 ?><!DOCTYPE html>
 <html lang="id">
 <head>

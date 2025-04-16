@@ -1,4 +1,5 @@
 <?php
+require_once 'functions.php';
 
 if(isset($_POST)) {
   $username = $_POST['username'];
@@ -13,16 +14,8 @@ if(isset($_POST)) {
   // password diubah menjadi hash
   $password = password_hash($password, PASSWORD_DEFAULT);
 
-  // koneksi ke database
-  $mysqli = mysqli_connect('localhost', 'webuser', 'webuser', 'ug234');
-  // buat query
-  $sql = "INSERT INTO users (username, password, fullname, city) 
-          VALUES ('$username', '$password', '$fullname', '$city')";
-  // eksekusi query
-  if(!$result = mysqli_query($mysqli, $sql)) {
-    // jika gagal, tampilkan pesan error
-    exit('Gagal Query: ' . mysqli_error($mysqli));
-  }
+  $result = dbquery("INSERT INTO users (username, password, fullname, city) 
+          VALUES ('$username', '$password', '$fullname', '$city')");
 
 }
 
