@@ -21,5 +21,6 @@ if(isset($_POST)) {
 }
 
 // redirect ke halaman login
-header('Location: login.php');
-exit();
+redirect_with_message('login.php', 'Username atau Password salah', 'error');
+// header('Location: login.php');
+// exit();

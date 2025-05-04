@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+require_once 'functions.php';
+if(isset($_SESSION['user'])) {
+  header('Location: index.php');
+  exit();
+}
+
+?><!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -12,6 +19,7 @@
   </header>
   <main>
     <form action="validasi.php" method="post" id="form-login">
+      <?= flash_message() ?>
       <div class="row">
         <label for="input-username">Username</label>
         <input type="text" name="username" id="input-username" required autofocus>

@@ -48,7 +48,24 @@ function show_menu() {
 
 function cek_session() {
   if(!isset($_SESSION['user'])) {
-    header('Location: login.php');
-    exit();
+    redirect_with_message('login.php', 'Silahkan login terlebih dahulu', 'error');
   }
+}
+
+function redirect_with_message($url, $message, $type = 'success') {
+  $_SESSION['flash']['message'] = $message;
+  $_SESSION['flash']['type'] = $type;
+  header('Location: ' . $url);
+  exit();
+}
+
+function flash_message() {
+  $alert = '';
+  if(isset($_SESSION['flash'])) {
+    $message = $_SESSION['flash']['message'];
+    $type = $_SESSION['flash']['type'];
+    unset($_SESSION['flash']);
+    $alert .= '<div class="alert alert-' . $type . '">' . $message . '</div>';
+  }
+  return $alert;
 }

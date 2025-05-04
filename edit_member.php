@@ -1,5 +1,6 @@
 <?php
 require_once 'functions.php';
+cek_session();
 
 if(!isset($_GET['id'])) {
   header('Location: daftar_member.php');
@@ -12,8 +13,7 @@ $result = dbquery("SELECT * FROM users WHERE id = $id");
 // ambil data anggota
 if(!$row = mysqli_fetch_assoc($result)) {
   // jika tidak ada data anggota, redirect ke daftar anggota
-  header('Location: daftar_member.php');
-  exit();
+  redirect_with_message('daftar_member.php', 'Data tidak ditemukan', 'error');
 }
 ?><!DOCTYPE html>
 <html lang="id">
@@ -53,6 +53,7 @@ if(!$row = mysqli_fetch_assoc($result)) {
         <div class="row">
           <button type="reset">Reset</button>
           <button type="submit">Simpan</button>
+          <input type="hidden" name="id" value="<?= $row['id'] ?>">
         </div>
       </fieldset>
     </form>

@@ -102,3 +102,16 @@ h2 {
 .isi-detail {
   font-weight: bold;
 }
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+.alert-error {
+  background-color: #fee;
+  border: 1px solid #eaa;
+}
+.alert-success {
+  background-color: #ffe;
+  border: 1px solid #eea;
+}

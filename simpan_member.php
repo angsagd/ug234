@@ -1,5 +1,6 @@
 <?php
 require_once 'functions.php';
+cek_session();
 
 if(isset($_POST)) {
   $username = $_POST['username'];
@@ -17,6 +18,13 @@ if(isset($_POST)) {
   $result = dbquery("INSERT INTO users (username, password, fullname, city) 
           VALUES ('$username', '$password', '$fullname', '$city')");
 
+  if($result) {
+    // jika berhasil, redirect ke halaman daftar anggota
+    redirect_with_message('daftar_member.php', 'Data anggota berhasil ditambahkan');
+  } else {
+    // jika gagal, redirect ke halaman daftar anggota
+    redirect_with_message('daftar_member.php', 'Gagal menambahkan data anggota', 'error');
+  }
 }
 
 // redirect ke halaman daftar anggota

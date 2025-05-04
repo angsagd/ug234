@@ -12,5 +12,6 @@ const MENU = [
   ['url'=>'index.php', 'label'=>'Beranda'],
   ['url'=>'daftar_member.php', 'label'=>'Daftar Anggota'],
   ['url'=>'registrasi.php', 'label'=>'Registrasi Anggota'],
+  ['url'=>'profil.php', 'label'=>'Profil'],  
   ['url'=>'logout.php', 'label'=>'Logout'],
 ];

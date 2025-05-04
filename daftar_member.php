@@ -1,5 +1,6 @@
 <?php
 require_once 'functions.php';
+cek_session();
 
 $result = dbquery("SELECT * FROM users");
 
@@ -17,6 +18,7 @@ $result = dbquery("SELECT * FROM users");
   </header>
   <?= show_menu() ?>
   <main>
+    <?= flash_message() ?>
     <table>
       <thead>
         <tr>
