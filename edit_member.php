@@ -29,12 +29,12 @@ if(!$row = mysqli_fetch_assoc($result)) {
   </header>
   <?= show_menu() ?>
   <main>
-    <form action="update_member.php" method="post" id="form-registrasi">
+    <form action="update_member.php" method="post" enctype="multipart/form-data" id="form-registrasi">
       <fieldset>
         <legend>Informasi Login</legend>
         <div class="row">
           <label for="input-username">Username</label>
-          <input type="text" id="input-username" value="<?= $row['username'] ?>" readonly>
+          <input type="text" id="input-username" name="username" value="<?= $row['username'] ?>" readonly>
         </div>
       </fieldset>
       <fieldset>
@@ -47,6 +47,11 @@ if(!$row = mysqli_fetch_assoc($result)) {
           <label for="input-city">Kota</label>
           <input type="text" name="city" id="input-city" value="<?= $row['city'] ?>" required>
         </div>
+      </fieldset>
+      <fieldset>
+        <legend>Profile Picture</legend>
+        <input type="file" name="pic" id="input-pic" accept="image/png">
+        <div class="pic-upload-info">Biarkan kosong jika tidak ingin mengganti PP. File gambar wajib dalam format *.png</div>
       </fieldset>
       <fieldset>
         <legend>Aksi</legend>

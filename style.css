@@ -115,3 +115,19 @@ h2 {
   background-color: #ffe;
   border: 1px solid #eea;
 }
+.profile-picture {
+  float: left;
+  width: 200px;
+  padding: 0;
+  margin: 15px 20px 0 0;
+}
+.profile-picture > img {
+  width: 100%;
+  border-radius: 6px;
+}
+.pic-upload-info {
+  margin-top: 5px;
+  font-size: smaller;
+  font-style: italic;
+  color: #f66;
+}

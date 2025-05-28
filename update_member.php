@@ -4,11 +4,18 @@ cek_session();
 
 if(isset($_POST)) {
   $id = $_POST['id'];
+  $username = $_POST['username'];
   $fullname = $_POST['fullname'];
   $city = $_POST['city'];
 
   // validasi password dan konfirmasi
   // dilakukan di sini (setelah pembahasan session)
+
+  // cek apakah ada file gambar yang diupload
+  if(isset($_FILES['pic'])) {
+    $pic = $_FILES['pic'];
+    move_uploaded_file($pic['tmp_name'], 'img/pic/' . $username . '.png');
+  }
 
   // password diubah menjadi hash
   $password = password_hash($password, PASSWORD_DEFAULT);
@@ -22,8 +29,9 @@ if(isset($_POST)) {
     // jika gagal, redirect ke halaman daftar anggota
     redirect_with_message('daftar_member.php', 'Gagal memperbarui data anggota', 'error');
   }
+
 }
 
 // redirect ke halaman daftar anggota
-header('Location: daftar_member.php');
-exit();
+// header('Location: daftar_member.php');
+// exit();
