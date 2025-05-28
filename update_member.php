@@ -17,7 +17,7 @@ if(isset($_POST)) {
 
   if($result) {
     // jika berhasil, redirect ke halaman daftar anggota
-    redirect_with_message('daftar_member.php', 'Data anggota berhasil diperbarui');
+    redirect_with_message('daftar_member.php', 'Data anggota "<b>'. $fullname .'</b>" berhasil diperbarui');
   } else {
     // jika gagal, redirect ke halaman daftar anggota
     redirect_with_message('daftar_member.php', 'Gagal memperbarui data anggota', 'error');
