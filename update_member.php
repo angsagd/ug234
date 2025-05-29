@@ -24,10 +24,10 @@ if(isset($_POST)) {
 
   if($result) {
     // jika berhasil, redirect ke halaman daftar anggota
-    redirect_with_message('daftar_member.php', 'Data anggota "<b>'. $fullname .'</b>" berhasil diperbarui');
+    redirect_with_message('profil_member.php?id=' . $id, 'Data anggota "<b>' . $fullname . '</b>" berhasil diperbarui');
   } else {
     // jika gagal, redirect ke halaman daftar anggota
-    redirect_with_message('daftar_member.php', 'Gagal memperbarui data anggota', 'error');
+    redirect_with_message('profil_member.php?id=' . $id, 'Gagal memperbarui data anggota', 'error');
   }
 
 }

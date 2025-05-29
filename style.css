@@ -80,6 +80,9 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+tr:hover {
+  background-color: #ffc;
+}
 th,
 td {
   padding: 5px 10px;
@@ -118,16 +121,59 @@ h2 {
 .profile-picture {
   float: left;
   width: 200px;
+  height: 200px;
+  overflow: hidden;
   padding: 0;
   margin: 15px 20px 0 0;
 }
 .profile-picture > img {
   width: 100%;
-  border-radius: 6px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 100%;
 }
 .pic-upload-info {
   margin-top: 5px;
   font-size: smaller;
   font-style: italic;
   color: #f66;
+}
+
+#file-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#file-list li {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-flow: row nowrap;
+}
+#file-list li:hover {
+  background-color: #ffc;
+}
+#file-list .dl-filename {
+  margin-right: 5px;
+  text-decoration: none;
+  color: #333;
+}
+#file-list .dl-filename:hover {
+  color: #c33;
+}
+#file-list .dl-filesize {
+  margin-right: 5px;
+  font-style: italic;
+  font-size: small;
+  color: #666;
+}
+#file-list .dl-delete {
+  margin-left: auto;
+  text-decoration: none;
+  color: #c33;
+}
+#file-list .dl-delete:hover {
+  color: #33c;
 }

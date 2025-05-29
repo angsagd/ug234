@@ -37,6 +37,7 @@ if(file_exists('img/pic/' . $row['username'] . '.png')) {
   </header>
   <?= show_menu() ?>
   <main>
+    <?= flash_message() ?>
     <section class="profile-picture">
       <img src="<?= $pic_path ?>" alt="profile picture">
     </section>
