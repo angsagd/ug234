@@ -20,6 +20,10 @@ main {
   flex-direction: column;
   min-height: 0;
 }
+hr {
+  border: 1px inset #ccc;
+  margin: 20px 0 10px 0;
+}
 #form-registrasi .row,
 #form-login .row {
   margin: 5px 0;
@@ -226,7 +230,7 @@ h2 {
 }
 #notes-form .notes-list li.active a {
   background-color: #ccc;
-  color: #000;
+  color: #222;
 }
 #notes-form .notes-content {
   flex: 1 1 auto;
