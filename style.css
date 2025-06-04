@@ -227,9 +227,11 @@ h2 {
 }
 #notes-form .notes-list a:hover {
   background-color: #ddd;
+  border-radius: 4px;
 }
 #notes-form .notes-list li.active a {
   background-color: #ccc;
+  border-radius: 4px;
   color: #222;
 }
 #notes-form .notes-content {

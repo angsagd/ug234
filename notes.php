@@ -50,19 +50,19 @@ foreach($files as $file) {
           </ul>
         </div>
         <div class="notes-content">
-          <textarea name="content" autofocus spellcheck="false"><?= $content ?></textarea>
+          <textarea name="content" autofocus spellcheck="false" tabindex="1"><?= $content ?></textarea>
         </div>
       </div>
       <div class="notes-action">
         <span>
-          <button type="reset">Reset</button>
-          <a href="notes_delete.php?f=<?= $name ?>" onclick="return konfirmasi()" class="button">Delete</a>
-          <a href="notes.php" class="button">Baru</a>
+          <button type="reset" tabindex="4">Reset</button>
+          <a href="notes_delete.php?f=<?= $name ?>" onclick="return konfirmasi()" class="button" tabindex="5">Delete</a>
+          <a href="notes.php" class="button" tabindex="6">Baru</a>
         </span>
         <span>
           <label for="input-name">Notes Name</label>
-          <input type="text" id="input-name" name="name" value="<?= $name ?>" required>
-          <button type="submit">Simpan</button>
+          <input type="text" id="input-name" name="name" value="<?= $name ?>" tabindex="2" required>
+          <button type="submit" tabindex="3">Simpan</button>
         </span>
       </div>
     </form>
