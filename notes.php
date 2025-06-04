@@ -19,6 +19,12 @@ if(isset($_GET['f'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catatan Online</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
 </head>
 <body>
   <header>
