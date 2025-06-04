@@ -1,6 +1,8 @@
 <?php
 require_once 'functions.php';
 cek_session();
+
+chdir('files');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +17,7 @@ cek_session();
   </header>
   <?= show_menu() ?>
   <main>
+    <?= flash_message() ?>
     <section id="file-upload">
       <h2>Upload</h2>
       <form action="upload.php" enctype="multipart/form-data" method="post">
@@ -26,29 +29,33 @@ cek_session();
     <section id="file-download">
       <h2>Download</h2>
       <ul id="file-list">
-        <li>
-          <a href="#" class="dl-filename">Lorem Ipsum</a>
-          <span class="dl-filesize">- 1.2 MB</span>
-          <a href="delete_file.php" class="dl-delete">delete</a>
-        </li>
-        <li>
-          <a href="#" class="dl-filename">Sit Amet</a>
-          <span class="dl-filesize">- 1.2 MB</span>
-          <a href="delete_file.php" class="dl-delete">delete</a>
-        </li>
-        <li>
-          <a href="#" class="dl-filename">Consectetur adipisicing elit Illum alias sapiente</a>
-          <span class="dl-filesize">- 1.2 MB</span>
-          <a href="delete_file.php" class="dl-delete">delete</a>
-        </li>
-        <li>
-          <a href="#" class="dl-filename">Sit Amet</a>
-          <span class="dl-filesize">- 1.2 MB</span>
-          <a href="delete_file.php" class="dl-delete">delete</a>
-        </li>
+<?php
+$files = scandir(getcwd());
+foreach ($files as $file) {
+
+  if(is_file($file) && substr($file, 0, 1)!='.') {
+    $size = filesize($file);
+
+    if($size > pow(1024, 3)) $size = round($size/pow(1024, 3), 1) . ' GB';
+    elseif($size > pow(1024, 2)) $size = round($size/pow(1024, 2), 1) . ' MB';
+    elseif($size > 1024) $size = round($size/1024, 1) . ' KB';
+    else $size = $size . ' B';
+
+    echo '<li>';
+    echo '<a href="files/'.$file.'" class="dl-filename" download>'.$file.'</a>';
+    echo '<span class="dl-filesize">- '.$size.'</span>';
+    echo '<a href="delete_file.php?f='.$file.'" class="dl-delete" onclick="return konfirmasi()">delete</a>';
+    echo '</li>';
+  }
+}
+?>
       </ul>
     </section>
   </main>
-  
+  <script>
+    function konfirmasi() {
+      return confirm('Apakah anda yakin ingin menghapus file ini?');
+    }
+  </script>
 </body>
 </html>

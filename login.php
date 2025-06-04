@@ -22,7 +22,7 @@ if(isset($_SESSION['user'])) {
       <?= flash_message() ?>
       <div class="row">
         <label for="input-username">Username</label>
-        <input type="text" name="username" id="input-username" required autofocus>
+        <input type="text" name="username" id="input-username" required autofocus autocomplete="off">
       </div>
       <div class="row">
         <label for="input-password">Password</label>
