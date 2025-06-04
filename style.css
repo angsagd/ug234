@@ -1,7 +1,13 @@
-body {
-  font-family: Arial, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
   background-color: #eee;
 }
 header {
@@ -11,6 +17,10 @@ header {
 }
 main {
   padding: 20px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 #form-registrasi .row,
 #form-login .row {
@@ -37,6 +47,7 @@ input[type="password"]:focus {
   border-color: #796;
 }
 button,
+a.button,
 .button-container a {
   background-color: #333;
   color: #fff;
@@ -49,6 +60,8 @@ button,
 }
 button:hover,
 button:focus,
+a.button:hover,
+a.button:focus,
 .button-container a:focus,
 .button-container a:hover {
   background-color: #444;
@@ -176,4 +189,69 @@ h2 {
 }
 #file-list .dl-delete:hover {
   color: #33c;
+}
+
+#notes-form {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column; /* Ubah ke column */
+  min-height: 0;
+}
+
+#notes-form .notes-main {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+#notes-form .notes-list {
+  margin: 5px 0;
+  width: 200px;
+  height: auto;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+#notes-form .notes-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#notes-form .notes-list a {
+  text-decoration: none;
+  color: #666;
+  display: block;
+  padding: 5px;
+}
+#notes-form .notes-list a:hover {
+  background-color: #ddd;
+}
+#notes-form .notes-list li.active a {
+  background-color: #ccc;
+  color: #000;
+}
+#notes-form .notes-content {
+  flex: 1 1 auto;
+  margin-left: 10px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+#notes-form .notes-content textarea {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+#notes-form .notes-content textarea:focus {
+  outline: none;
+}
+
+#notes-form .notes-action {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

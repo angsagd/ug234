@@ -13,6 +13,7 @@ const MENU = [
   ['url'=>'daftar_member.php', 'label'=>'Daftar Anggota'],
   ['url'=>'registrasi.php', 'label'=>'Registrasi Anggota'],
   ['url'=>'download.php', 'label'=>'Files'],
+  ['url'=>'notes.php', 'label'=>'Catatan'],
   ['url'=>'profil.php', 'label'=>'Profil'],  
   ['url'=>'logout.php', 'label'=>'Logout'],
 ];
